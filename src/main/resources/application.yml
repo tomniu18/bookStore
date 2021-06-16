@@ -1,0 +1,27 @@
+server:
+  port: 8082
+  tomcat:
+    accesslog:
+      enabled: true
+      pattern: common
+    basedir: logs
+
+logging:
+  file:
+    name: /logs/logs/application.log
+
+#TODO: figure out why I need this here and in bootstrap.yml
+spring:
+  application:
+    name: testLatticeApp
+
+ribbon:
+  ServerListRefreshInterval: 1000
+
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
